@@ -48,6 +48,13 @@ $('#add-device').on('click', function() {
     location.href = 'device-list.html';
 });
 
+//ONCLICK event handler to remove all the devices
+$('#remove-devices').on('click', function() {
+    localStorage.removeItem('devices');
+    const devices = JSON.parse(localStorage.getItem('devices')) || [];
+    location.href = 'device-list.html';
+});
+
 //ONCLICK event handler to send devices
 $('#send-command').on('click', function() {
     const command = $('#command').val();
