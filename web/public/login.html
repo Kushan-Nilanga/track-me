@@ -28,31 +28,35 @@ TrackMe application"
         transform: translate(-50%, -50%);
         text-align: center;
       "
-    > <div id="navbar"></div>
-      <h4 style="padding: 1em;">Register New Device</h4>
+    >
+    <h4 style="padding: 1em;">Log in</h4>
+    <div>
       <div class="form-group row">
-        <label for="user" class="col-4" style="padding: 1%;">User</label>
-        <input type="text" class="form-control col-8" id="user" />
-      </div>
-      <div class="form-group row">
-        <label for="name" class="col-4" style="padding: 1%;">Device Name</label>
-        <input type="text" class="form-control col-8" id="name" />
+        <label for="user" class="col-4" style="padding: 1%;">User name</label>
+        <input type="text" class="form-control col-8" id="uname" />
+
+        <label for="name" class="col-4" style="padding: 1%;">Password</label>
+        <input type="password" class="form-control col-8" id="pword" />
+
+        <div style="width: 100%!important;"><p id="error" style="color: red; float:right;"></p></div>
       </div>
       <button
         class="btn btn-success btn-sm"
         style="float: right; width: 20%;"
-        id="add-device"
+        id="signin"
       >
-        Save
+        Sign in
       </button>
-      <button class="btn btn-sm" style="float: right; width: 30%;">
-        <a href="device-list.html">View devices</a>
-      </button>
-      
+      <button
+        class="btn btn-link btn-sm"
+        style="float: right; width: 20%;"
+      ></button>
+      <a href="/registration">Register</a>
+    </div>
+
       <script src="https://code.jquery.com/jquery-3.5.1.min.js "></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js "></script>
       <script src="app.js "></script>
     </div>
-    <div id="footer"></div>
   </body>
 </html>
