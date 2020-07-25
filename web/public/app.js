@@ -1,5 +1,5 @@
 // DEVICE REQUESTS
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://track-me-git-master.dknathalage.vercel.app/api';
 const currentUser = localStorage.getItem('user');
 if (currentUser) {
     $.get(`${API_URL}/users/${currentUser}/devices`)
