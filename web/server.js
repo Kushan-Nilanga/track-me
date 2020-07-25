@@ -15,7 +15,6 @@ app.get('/register-device', (req, res) => { res.sendFile(`${base}/register-devic
 app.get('/send-command', (req, res) => { res.sendFile(`${base}/send-command.html`); });
 app.get('/about', (req, res) => { res.sendFile(`${base}/about-me.html`); });
 app.get('/login', (req, res) => { res.sendFile(`${base}/login.html`); });
-
 app.get('*', (req, res) => { res.sendFile(`${base}/404.html`); });
 
 // server listen

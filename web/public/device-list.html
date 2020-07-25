@@ -14,7 +14,8 @@ TrackMe application" />
 
 <body style="height:100%;">
     <div id="navbar"></div>
-    <div style="width: 30em;height: 40%;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%); text-align:center;">
+    <div
+        style="width: 30em;height: 40%;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%); text-align:center;">
         <h3>Device List</h3>
         <table id="devices" class="table">
             <thead>
@@ -25,10 +26,37 @@ TrackMe application" />
             </thead>
             <tbody></tbody>
         </table>
-        <button class="btn btn-sm" style="float: right; width: 30%;"><a href="register-device.html">Register a device</a></button>
-        <button class="btn btn-sm btn-danger" style="float: right; width: 30%;" id="remove-devices">Remove all devices</button>
+        <button class="btn btn-sm" style="float: right; width: 30%;"><a href="register-device.html">Register a device</a></button> 
     </div>
+    <div>
+        <!-- Modal -->
+        <div class="modal fade" id="historyModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Device History</h5>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Temperature</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyContent"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+    </div>
+    <script>
+        localStorage.getItem('isAuthenticated') ? "" : location.href = '/login'
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
