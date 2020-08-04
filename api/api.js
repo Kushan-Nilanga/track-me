@@ -145,14 +145,14 @@ app.get('/api/devices', (req, res) => {
     });
 });
 
-/**
-* @api {post} /api/send-command Command A string of command
-* @apiGroup Test
-* @apiDescription This route outputs the said command as a console output.
-*/
-app.post('/api/send-command', (req, res) => {
-    console.log(req.body);
-})
+// /**
+// * @api {post} /api/send-command Command A string of command
+// * @apiGroup Test
+// * @apiDescription This route outputs the said command as a console output.
+// */
+// app.post('/api/send-command', (req, res) => {
+//     console.log(req.body);
+// })
 
 /**
 * @api {get} /api/test SuccessString A string verifying success

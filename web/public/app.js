@@ -1,5 +1,6 @@
 // DEVICE REQUESTS
 const API_URL = 'https://track-me-git-master.dknathalage.vercel.app/api';
+const MQTT_URL = 'http://localhost:5001/send-command'
 const currentUser = localStorage.getItem('user');
 if (currentUser) {
     $.get(`${API_URL}/users/${currentUser}/devices`)
@@ -69,7 +70,10 @@ $('#login').on('click', () => {
 //ONCLICK event handler to send devices
 $('#send-command').on('click', function () {
     const command = $('#command').val();
-    console.log(`command is: ${command}`);
+    const deviceId = $('#deviceId').val();
+    $.post(`${MQTT_URL}/send-command`, { deviceId, command }).then((res) => {
+        console.log(res);
+    });
 });
 
 $('#register').on('click', function () {

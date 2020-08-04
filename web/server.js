@@ -7,6 +7,12 @@ const base = `${__dirname}/public`
 // serving static files from public directory
 app.use(express.static('public'))
 
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-RequestedWith, Content-Type, Accept");
+    next();
+});
+
 // MIDDLEWARE
 // handling calls from / path
 app.get('/', (req, res) => { res.sendFile(`${base}/device-list.html`); });
