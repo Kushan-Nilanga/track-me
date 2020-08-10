@@ -79,3 +79,12 @@ describe("test get devices endpoint", () => {
     })
 })
 
+describe("test device history endpoints", () => { 
+    test('test device history', () => {
+        expect.assertions(1)
+        return axios.get(`${API_URL}/devices/5f1baeb6bf3db310f46cd89e/device-history`)
+            .then(res => {
+                expect(res.data[0].temp).toEqual("30.0")
+            })
+    })
+})
