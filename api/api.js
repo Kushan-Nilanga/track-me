@@ -136,7 +136,6 @@ app.post('/api/devices', (req, res) => {
 *   "User does not exist"
 * }
 */
-
 app.get('/api/devices', (req, res) => {
     Device.find({}, (err, devices) => {
         return err ?
