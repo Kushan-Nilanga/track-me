@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Registration extends Component {
+export default class device extends Component {
     constructor(props) {
-        super(props);
+        super(props)
     }
+
     render() {
         return (
             <div>
