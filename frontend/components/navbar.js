@@ -4,10 +4,11 @@ import React from "react";
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {loginText: 'Log in'}
     }
 
-    handleLogButtonClick = (target) => {
-        this.props.onLogout()
+    handleLogOutButtonClick = (target) => {
+        document.location.href = "/login"
     }
 
     render() {
@@ -20,7 +21,7 @@ class NavBar extends React.Component {
                         <a className="nav-item nav-link" href="/register-device">Register Device</a>
                         <a className="nav-item nav-link" href="/send-command">Send Command</a>
                         <a className="nav-item nav-link" href="/about">About Me</a>
-                        <button id="logout-btn" value="Logout" className="btn btn-link" onClick={(e) => this.handleLogButtonClick(e)}>asdasd</button>
+                        <button id="logout-btn" value="Logout" className="btn btn-link" onClick={() => this.handleLogOutButtonClick()}>Logout</button>
                     </div>
                 </div>
             </nav>
