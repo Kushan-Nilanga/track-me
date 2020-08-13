@@ -12,6 +12,7 @@
     "boostrap": "^2.0.0",
     "bootstrap": "^4.5.2",
     "dotenv": "^8.2.0",
+    "fs": "0.0.1-security",
     "jquery": "^3.5.1",
     "next": "9.5.2",
     "popper.js": "^1.16.1",

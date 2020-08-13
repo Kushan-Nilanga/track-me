@@ -3,16 +3,24 @@ import NavBar from '../components/navbar'
 import Device from '../components/device'
 import axios from 'axios'
 
-let api_url = ""
-
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
-    api_url = process.env.API_URL
-    axios.get(`${api_url}/devices`).then((res) => { 
-      console.log(res.data)
+    const demo = <tr key={0}> <td> user </td> <td> name </td> </tr> 
+    this.state = { devices: demo, isLogged:true }
+  }
+
+  fetchDevices = () =>{
+    axios.get(`http://localhost:5000/api/devices`).then((res) => {
+      const dat = res.data.map(dev=> 
+        <Device name={dev.name} key={dev._id} user={dev.user} sensorData={dev.sensorData}/>
+      )
+      this.setState({ devices: dat, isLogged:true })
     })
-    this.state = { isLogged: false, devices: [], user: null };
+  }
+
+  componentDidMount = () =>{
+    this.fetchDevices()
   }
 
   render() {
@@ -26,7 +34,7 @@ export default class Home extends React.Component {
         <main>
           <NavBar onLogout={() => window.location.href = '/login'} isLogged={this.state.isLogged}></NavBar>
           <div>
-            <table className="table">
+            <table className="table" style={{width:"100%"}}>
               <thead>
                 <tr>
                   <th>User</th>
@@ -34,7 +42,7 @@ export default class Home extends React.Component {
                 </tr>
               </thead>
               <tbody>
-
+              {this.state.devices}
               </tbody>
             </table>
           </div>
