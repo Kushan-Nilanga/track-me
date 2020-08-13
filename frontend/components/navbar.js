@@ -20,6 +20,7 @@ class NavBar extends React.Component {
                         <a className="nav-item nav-link" href="/">Devices</a>
                         <a className="nav-item nav-link" href="/register-device">Register Device</a>
                         <a className="nav-item nav-link" href="/send-command">Send Command</a>
+                        <a className="nav-item nav-link" href="/registration">Registration</a>
                         <a className="nav-item nav-link" href="/about">About Me</a>
                         <button id="logout-btn" value="Logout" className="btn btn-link" onClick={() => this.handleLogOutButtonClick()}>Logout</button>
                     </div>

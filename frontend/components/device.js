@@ -34,9 +34,9 @@ export default class device extends Component {
                         </table>
                     </div>
                 </div>
-            ReactDOM.render(elem, document.getElementById(this.props.id))
+            ReactDOM.render(elem, document.getElementById("_"+this.props.id))
         }
-        else{ReactDOM.render(<></>, document.getElementById(this.props.id))}
+        else{ReactDOM.render(<></>, document.getElementById("_"+this.props.id))}
     }
 
     render() {
@@ -46,7 +46,7 @@ export default class device extends Component {
                     <td>{this.props.user}</td>
                     <td><button className="btn btn-light btn-sm" onClick={()=>{this.onDeviceClick()}}>{this.props.name}</button></td>
                 </tr>
-                <div id={this.props.id}></div>
+                <div id={"_"+this.props.id}></div>
             </>
         )
     }

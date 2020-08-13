@@ -13,7 +13,7 @@ export default class Home extends React.Component {
   fetchDevices = () =>{
     axios.get(`http://localhost:5000/api/devices`).then((res) => {
       const dat = res.data.map(dev=> 
-        <Device name={dev.name} key={dev._id} user={dev.user} sensorData={dev.sensorData}/>
+        <Device id={dev._id} name={dev.name} key={dev._id} user={dev.user} sensorData={dev.sensorData}/>
       )
       this.setState({ devices: dat, isLogged:true })
     })
