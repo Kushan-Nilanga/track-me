@@ -4,12 +4,14 @@
   "description": "",
   "main": "mqtt.js",
   "scripts": {
-    "start": "node mqtt.js"
+    "start": "node mqtt.js",
+    "doc": "apidoc -o public/generated-docs/ -e node_modules/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apidoc": "^0.24.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.28",

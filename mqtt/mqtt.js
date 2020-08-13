@@ -56,6 +56,19 @@ client.on('message', (topic, message) => {
     }
 });
 
+/**
+ * @api {post} /send-command
+ * @apiDescription This route sends a command to the targeted device
+ * @apiGroup SensorData
+ * 
+ * @apiParam {String} deviceId Id of of the Device.
+ * @apiParam {String} command to the Device.
+ * @apiSuccessExample Success-Response:
+ * HTTP/1.1 200 OK
+ * {
+ *  "published new message"
+ * }
+ */
 app.post('/send-command', (req, res) => {
     const { deviceId, command } = req.body;
     const topic = `/219397418/command/${deviceId}`;
@@ -64,6 +77,19 @@ app.post('/send-command', (req, res) => {
     });
 });
 
+
+/**
+ * @api {put} /sensor-data Post a device sensor data to database
+ * @apiDescription This route adds a sensor data with relavent details to the database.
+ * @apiGroup SensorData
+ * 
+ * @apiParam {String} deviceId Id of the Device.
+ * @apiSuccessExample Success-Response:
+ * HTTP/1.1 200 OK
+ * {
+ *  "published new message"
+ * }
+ */
 app.put('/sensor-data', (req, res) => {
     const { deviceId } = req.body;
     const [lat, lon] = randomCoordinates().split(", ");
@@ -76,6 +102,9 @@ app.put('/sensor-data', (req, res) => {
         res.send('published new message');
     });
 });
+
+app.use(express.static(`${__dirname}/public/generated-docs/`));
+app.get('/', (req, res) => { res.sendFile(`${__dirname}/public/generated-docs/`); });
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
