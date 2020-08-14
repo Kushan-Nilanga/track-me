@@ -1,5 +1,5 @@
 import React from "react";
-
+import Cookies from 'js-cookie'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -7,7 +7,9 @@ class NavBar extends React.Component {
     }
 
     handleLogOutButtonClick = (target) => {
-        global.localStorage.setItem('isLogged', 'false')
+        console.log(Cookies.get('user'));
+        Cookies.remove('user');
+        Cookies.remove('isLogged');
         document.location.href = "/login"
     }
 

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookies from 'js-cookie'
 
 export default class Login extends React.Component {
     constructor(props) {
@@ -15,9 +16,13 @@ export default class Login extends React.Component {
     handleLoginClick = () => {
         axios.post('http://localhost:5000/api/authenticate', { user: this.state.uname, password: this.state.pword })
             .then((res) => {
-                if (res.success == true) {
-                    localStorage.setItem('isLogged', 'true')
+                console.log(res)
+                if (res.data.success === true) {
+                    Cookies.set('isLogged', 'true');
+                    Cookies.set('user', this.state.uname);
                     document.location.href = '/'
+                } else { 
+                    alert(res.data.error)
                 }
             }).catch((err) => {
                 alert(err)
@@ -26,7 +31,7 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="m-5">
                 <h4>Log in</h4>
                 <div>
                     <div className="form-group row">
@@ -37,7 +42,6 @@ export default class Login extends React.Component {
                         <div style={{ width: "100%!important" }}><p id="error"></p></div>
                     </div>
                     <button className="btn btn-success btn-sm" onClick={() => this.handleLoginClick()}>Sign in</button>
-                    <a href="/registration">Register</a>
                 </div>
             </div>
         );

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import NavBar from '../components/navbar'
 import Device from '../components/device'
 import axios from 'axios'
+import checkAuth from '../helpers/check-login'
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -19,8 +20,10 @@ export default class Home extends React.Component {
     })
   }
 
-  componentDidMount = () => this.fetchDevices()
-
+  componentDidMount = () => {
+    if (!checkAuth()) { document.location.href = '/login' }
+    this.fetchDevices()
+  }
   render() {
     return (
       <div>
@@ -45,9 +48,6 @@ export default class Home extends React.Component {
             </table>
           </div>
         </main>
-
-        <footer>
-        </footer>
       </div>
     )
   }

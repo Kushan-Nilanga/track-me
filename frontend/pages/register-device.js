@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NavBar from '../components/navbar'
 import axios from 'axios'
+import checkAuth from '../helpers/check-login'
 
 export default class RegisterDevice extends Component {
     constructor(props) {
@@ -23,6 +24,8 @@ export default class RegisterDevice extends Component {
             alert(err)
         })
     }
+
+    componentDidMount = () => { if (!checkAuth()) { document.location.href = '/login' }}
 
     render() {
         return (

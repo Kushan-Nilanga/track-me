@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-
 export default class device extends Component {
     constructor(props) {
         super(props)
@@ -38,7 +37,6 @@ export default class device extends Component {
         }
         else{ReactDOM.render(<></>, document.getElementById("_"+this.props.id))}
     }
-
     render() {
         return (
             <>
