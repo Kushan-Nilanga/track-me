@@ -4,10 +4,10 @@ import React from "react";
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {loginText: 'Log in'}
     }
 
     handleLogOutButtonClick = (target) => {
+        global.localStorage.setItem('isLogged', 'false')
         document.location.href = "/login"
     }
 

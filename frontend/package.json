@@ -15,8 +15,10 @@
     "fs": "0.0.1-security",
     "jquery": "^3.5.1",
     "next": "9.5.2",
+    "node-localstorage": "^2.1.6",
     "popper.js": "^1.16.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "write-file-atomic": "^3.0.3"
   }
 }
