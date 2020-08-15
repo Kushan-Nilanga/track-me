@@ -19,7 +19,6 @@ export default class Home extends React.Component {
       this.setState({ devices: dat, isLogged: true })
     })
   }
-
   componentDidMount = () => {
     if (!checkAuth()) { document.location.href = '/login' }
     this.fetchDevices()

@@ -10,7 +10,6 @@ export default class Login extends React.Component {
     handleLoginClick = () => {
         document.location.href = "/"
     }
-
     handlePwordChange = (event) => this.setState({ pword: event.target.value })
     handleUsernameChange = (event) => this.setState({ uname: event.target.value })
     handleLoginClick = () => {
