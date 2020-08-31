@@ -7,7 +7,6 @@ const Device = require('./models/device');
 const User = require('./models/user')
 const mongoose = require('mongoose');
 const port = process.env.PORT || 5000;
-
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
