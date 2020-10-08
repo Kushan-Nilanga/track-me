@@ -15,7 +15,7 @@
     "fs": "0.0.1-security",
     "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
-    "next": "9.5.2",
+    "next": "9.5.4",
     "node-localstorage": "^2.1.6",
     "popper.js": "^1.16.1",
     "react": "16.13.1",
